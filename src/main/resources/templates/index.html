@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spring Boot 原型</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="card">
+        <p class="eyebrow">Prototype</p>
+        <h1>Spring Boot 网页已上线</h1>
+        <p class="lead">这台机器之前用于小龙虾相关服务，闲置了一段时间。现在跑着一个可访问的 Spring Boot 原型，方便继续往上加功能。</p>
+        <dl class="meta">
+            <div>
+                <dt>服务状态</dt>
+                <dd id="status">检测中…</dd>
+            </div>
+            <div>
+                <dt>服务器时间</dt>
+                <dd th:text="${serverTime} + ' ' + ${zoneLabel}">—</dd>
+            </div>
+            <div>
+                <dt>接口</dt>
+                <dd><a href="/api/health">/api/health</a> · <a href="/api/info">/api/info</a></dd>
+            </div>
+        </dl>
+    </main>
+    <script>
+        fetch("/api/health")
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+                var el = document.getElementById("status");
+                el.textContent = data.status === "ok" ? "运行正常" : "异常";
+                el.className = data.status === "ok" ? "ok" : "bad";
+            })
+            .catch(function () {
+                var el = document.getElementById("status");
+                el.textContent = "无法连接接口";
+                el.className = "bad";
+            });
+    </script>
+</body>
+</html>
