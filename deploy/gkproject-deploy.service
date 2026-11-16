@@ -1,0 +1,9 @@
+[Unit]
+Description=Pull gkproject from GitHub and deploy
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/gkproject-deploy
+Nice=10
