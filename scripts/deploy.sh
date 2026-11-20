@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# systemd oneshot units do not set HOME; git and ssh need it.
+export HOME="${HOME:-/root}"
+
 APP_DIR=/home/gkproject
 BRANCH=main
 REMOTE=origin
