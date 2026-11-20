@@ -19,6 +19,15 @@ java -jar target/web-prototype-0.1.0.jar
 - `/api/health` 健康检查
 - `/api/info` 应用与服务器信息
 
+## 小游戏
+
+首页有「进入游戏厅」。三款游戏都是浏览器里的 HTML/CSS/JS，不写服务器分数，也不增加依赖。
+
+- `/games` 游戏厅
+- `/games/snake` 贪吃蛇
+- `/games/2048` 2048
+- `/games/breakout` 打砖块
+
 ## 线上
 
 当前通过 Nginx 反向代理对外提供访问，应用以 systemd 服务 `springboot-prototype` 运行。

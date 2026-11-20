@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>打砖块 · 游戏厅</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/games.css">
+</head>
+<body class="play">
+    <main class="card">
+        <nav class="crumbs" aria-label="位置">
+            <a href="/">首页</a>
+            <span aria-hidden="true">/</span>
+            <a href="/games">游戏厅</a>
+        </nav>
+        <p class="eyebrow">小游戏</p>
+        <h1>打砖块</h1>
+        <p class="lead">鼠标移动、按住左右键，或用方向键移动挡板。空格、轻点棋盘或「发球」把球打出去。球掉下去会失去一条命。</p>
+        <div class="hud">
+            <div class="stat">
+                <span>得分</span>
+                <strong id="score" aria-live="polite">0</strong>
+            </div>
+            <div class="stat">
+                <span>生命</span>
+                <strong id="lives">3</strong>
+            </div>
+            <button type="button" class="btn" id="restart">重新开始</button>
+        </div>
+        <div class="stage wide">
+            <canvas id="board" width="480" height="360" aria-label="打砖块棋盘"></canvas>
+            <div class="overlay" id="overlay">
+                <h2 id="overlay-title">打砖块</h2>
+                <p id="overlay-text">移动挡板，把球弹回去打掉所有砖块。</p>
+                <button type="button" class="btn" id="overlay-action">开始游戏</button>
+            </div>
+        </div>
+        <p class="message" id="message">点击「开始游戏」</p>
+        <div class="hold-row">
+            <button type="button" class="hold" id="hold-left" aria-label="按住向左移动挡板">按住左移</button>
+            <button type="button" class="btn" id="serve">发球</button>
+            <button type="button" class="hold" id="hold-right" aria-label="按住向右移动挡板">按住右移</button>
+        </div>
+        <noscript><p class="message">需要开启 JavaScript 才能玩游戏。</p></noscript>
+    </main>
+    <script src="/games/breakout.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>游戏厅 · Spring Boot 原型</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/games.css">
+</head>
+<body class="play">
+    <main class="card hall">
+        <nav class="crumbs" aria-label="位置">
+            <a href="/">首页</a>
+        </nav>
+        <p class="eyebrow">Arcade</p>
+        <h1>游戏厅</h1>
+        <p class="lead">三款轻量小游戏，都在浏览器里运行。分数只在这一局里计算，不会提交到服务器。</p>
+        <div class="gallery">
+            <a class="game-tile" href="/games/snake">
+                <span class="eyebrow">01</span>
+                <h2>贪吃蛇</h2>
+                <p>吃到食物就会变长。撞到墙，或者咬到自己，这局就结束。</p>
+                <span class="go">开始</span>
+            </a>
+            <a class="game-tile" href="/games/2048">
+                <span class="eyebrow">02</span>
+                <h2>2048</h2>
+                <p>把相同的数字滑到一起，合成更大的数字。先凑出 2048。</p>
+                <span class="go">开始</span>
+            </a>
+            <a class="game-tile" href="/games/breakout">
+                <span class="eyebrow">03</span>
+                <h2>打砖块</h2>
+                <p>移动挡板接住小球，把砖块全部打掉。小球落下会失去一条命。</p>
+                <span class="go">开始</span>
+            </a>
+        </div>
+    </main>
+</body>
+</html>
