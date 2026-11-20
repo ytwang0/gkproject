@@ -21,8 +21,12 @@
                 <dd th:text="${serverTime} + ' ' + ${zoneLabel}">—</dd>
             </div>
             <div>
+                <dt>数据库</dt>
+                <dd id="db-status">检测中…</dd>
+            </div>
+            <div>
                 <dt>接口</dt>
-                <dd><a href="/api/health">/api/health</a> · <a href="/api/info">/api/info</a></dd>
+                <dd><a href="/api/health">/api/health</a> · <a href="/api/info">/api/info</a> · <a href="/api/db">/api/db</a></dd>
             </div>
         </dl>
         <section class="arcade" id="games">
@@ -57,6 +61,18 @@
             })
             .catch(function () {
                 var el = document.getElementById("status");
+                el.textContent = "无法连接接口";
+                el.className = "bad";
+            });
+        fetch("/api/db")
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+                var el = document.getElementById("db-status");
+                el.textContent = data.status === "ok" ? "已连接" : "连接异常";
+                el.className = data.status === "ok" ? "ok" : "bad";
+            })
+            .catch(function () {
+                var el = document.getElementById("db-status");
                 el.textContent = "无法连接接口";
                 el.className = "bad";
             });
