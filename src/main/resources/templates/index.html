@@ -25,6 +25,27 @@
                 <dd><a href="/api/health">/api/health</a> · <a href="/api/info">/api/info</a></dd>
             </div>
         </dl>
+        <section class="arcade" id="games">
+            <div class="arcade-head">
+                <h2>小游戏</h2>
+                <a href="/games">进入游戏厅</a>
+            </div>
+            <p class="arcade-note">三款纯前端小游戏，打开就能玩，分数不提交到服务器。</p>
+            <div class="arcade-links">
+                <a href="/games/snake">
+                    <strong>贪吃蛇</strong>
+                    <span>方向键或滑动</span>
+                </a>
+                <a href="/games/2048">
+                    <strong>2048</strong>
+                    <span>合并相同数字</span>
+                </a>
+                <a href="/games/breakout">
+                    <strong>打砖块</strong>
+                    <span>接住小球</span>
+                </a>
+            </div>
+        </section>
     </main>
     <script>
         fetch("/api/health")

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>贪吃蛇 · 游戏厅</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/games.css">
+</head>
+<body class="play">
+    <main class="card">
+        <nav class="crumbs" aria-label="位置">
+            <a href="/">首页</a>
+            <span aria-hidden="true">/</span>
+            <a href="/games">游戏厅</a>
+        </nav>
+        <p class="eyebrow">小游戏</p>
+        <h1>贪吃蛇</h1>
+        <p class="lead">用方向键或 WASD 移动。手机上可以点方向按钮，也可以在棋盘上滑动。吃到绿点得分，撞墙或咬到自己就结束。</p>
+        <div class="hud">
+            <div class="stat">
+                <span>得分</span>
+                <strong id="score" aria-live="polite">0</strong>
+            </div>
+            <button type="button" class="btn" id="primary">开始</button>
+        </div>
+        <div class="stage">
+            <canvas id="board" width="400" height="400" aria-label="贪吃蛇棋盘"></canvas>
+            <div class="overlay" id="overlay">
+                <h2 id="overlay-title">贪吃蛇</h2>
+                <p id="overlay-text">按「开始」，或直接按方向键。</p>
+                <button type="button" class="btn" id="overlay-action">开始</button>
+            </div>
+        </div>
+        <div class="pad" id="pad" aria-label="方向控制">
+            <button type="button" data-x="0" data-y="-1" aria-label="向上">上</button>
+            <button type="button" data-x="-1" data-y="0" aria-label="向左">左</button>
+            <button type="button" data-x="0" data-y="1" aria-label="向下">下</button>
+            <button type="button" data-x="1" data-y="0" aria-label="向右">右</button>
+        </div>
+        <noscript><p class="message">需要开启 JavaScript 才能玩游戏。</p></noscript>
+    </main>
+    <script src="/games/snake.js"></script>
+</body>
+</html>
